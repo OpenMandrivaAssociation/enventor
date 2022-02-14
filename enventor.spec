@@ -1,31 +1,26 @@
-%define	name enventor
-%define	git_version 20190227
-#%%define use_ccache 1
+
+%define	git 20211205
 
 Summary:        Enlightenment edc editor
-Name: 	        %{name}
-Version:        %{git_version}
-Release:        1
+Name: 	        enventor
+Version:        1.0.0
+Release:        0.%{git}.1
 License: 	BSD
 Group: 	        Graphical desktop/Enlightenment
 URL: 	        http://www.enlightenment.org/
-Source:         %{name}-%{git_version}.tar.xz
+Source:         https://download.enlightenment.org/rel/apps/enventor/%{name}-%{version}.tar.xz
 
-#BuildRequires:	elementary-devel
-BuildRequires:	efl-devel
-BuildRequires:	elementary
-BuildRequires:  efl
+# Git taken from https://git.enlightenment.org/tools/enventor.git/
+
+BuildRequires:	pkgconfig(efl)
 Requires:       efl
 Requires:       efl-devel
-Requires:       elementary
-Requires:       elementary-devel
-Requires:       evas-generic-loaders
 
 %description
 EDC script Editor for enlightenment.
 
 %prep
-%setup -qn %{name}-%{version}
+%autosetup -p1
 
 %build
 sed -i s,release_info=\"-release\ \$release\",release_info=\"\",g configure.ac
