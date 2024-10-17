@@ -7,7 +7,7 @@ Version:        1.0.0
 Release:        0.%{git}.1
 License: 	BSD
 Group: 	        Graphical desktop/Enlightenment
-URL: 	        http://www.enlightenment.org/
+URL: 	        https://www.enlightenment.org/
 Source:         https://download.enlightenment.org/rel/apps/enventor/%{name}-%{version}.tar.xz
 
 # Git taken from https://git.enlightenment.org/tools/enventor.git/
